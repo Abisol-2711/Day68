@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Delete First Occurence</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <p id="del-value"></p>
+      <p id="before-del"></p>
+      <p id="after-del"></p>
+    </div>
+
+    <script>
+      let delValue = document.getElementById("del-value");
+      let arrBefore = document.getElementById("before-del");
+      let arrAfter = document.getElementById("after-del");
+
+      let arr = ["a", "b", "c", "d", "b"];
+      arrBefore.innerHTML = `<span>Before Deletion: </span> [${arr}]`;
+
+      //Value to del
+      let valToDel = "b";
+      delValue.innerHTML = `<span>Value To Del: </span> ${valToDel}`;
+
+      let indOfVal = arr.indexOf(valToDel);
+
+      console.log(indOfVal);
+      if (indOfVal != -1) {
+        arr.splice(indOfVal, 1);
+      }
+      arrAfter.innerHTML = `<span>After Deletion: </span>[${arr}]`;
+    </script>
+  </body>
+</html>
